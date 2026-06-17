@@ -4,34 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- LUXURY PRELOADER LOGIC ---
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        const minDisplayTime = 1800; // Force logo animation to display for at least 1.8s
-        const startTime = Date.now();
-        
-        window.addEventListener('load', () => {
-            const elapsed = Date.now() - startTime;
-            const remaining = Math.max(0, minDisplayTime - elapsed);
-            
-            setTimeout(() => {
-                preloader.classList.add('loaded');
-                setTimeout(() => {
-                    preloader.style.display = 'none';
-                }, 800);
-            }, remaining);
-        });
-        
-        // Fallback safety trigger
-        setTimeout(() => {
-            if (preloader.style.display !== 'none') {
-                preloader.classList.add('loaded');
-                setTimeout(() => {
-                    preloader.style.display = 'none';
-                }, 800);
-            }
-        }, 5000);
-    }
+
 
     // --- EMAIL INTEGRATION (WEB3FORMS) ---
     // Get a free key at https://web3forms.com/ and paste it below to receive submissions directly in Gmail.
